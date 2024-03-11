@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {Link} from 'react-router-dom'
 import Slider from 'react-slick'
 import LoadingView from '../LoadingView'
 import './index.css'
@@ -103,7 +104,13 @@ class StorySlider extends Component {
         <Slider {...settings}>
           {storiesList.map(each => (
             <div key={each.userId} className="story-container">
-              <img src={each.storyUrl} alt="user story" className="story-img" />
+              <Link to="/stories">
+                <img
+                  src={each.storyUrl}
+                  alt="user story"
+                  className="story-img"
+                />
+              </Link>
               <p className="story-paragraph">{each.userName}</p>
             </div>
           ))}

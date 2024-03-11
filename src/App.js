@@ -3,6 +3,7 @@ import {Redirect, Route, Switch} from 'react-router-dom'
 import Login from './components/LoginRoute'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/HomeRoute'
+import Stories from './components/Stories'
 import MyProfile from './components/MyProfileRoute'
 import UserProfile from './components/UserProfileRoute'
 import NotFound from './components/NotFoundRoute'
@@ -14,7 +15,6 @@ class App extends Component {
     isSearchActive: false,
     isActive: false,
     searchInput: '',
-    searchList: [],
   }
 
   onMenuToggle = () => {
@@ -34,23 +34,18 @@ class App extends Component {
     this.setState({searchInput: event.target.value})
   }
 
-  setPostsData = updatedData => {
-    this.setState({searchList: updatedData})
-  }
-
   searchInputValue = value => {
     this.setState({searchInput: value})
   }
 
   render() {
-    const {isSearchActive, isActive, searchInput, searchList} = this.state
+    const {isSearchActive, isActive, searchInput} = this.state
     return (
       <InstaContext.Provider
         value={{
           isSearchActive,
           isActive,
           searchInput,
-          searchList,
           onMenuToggle: this.onMenuToggle,
           onCloseToggle: this.onCloseToggle,
           onSearchItem: this.onSearchItem,
@@ -60,6 +55,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/stories" component={Stories} />
           <ProtectedRoute exact path="/my-profile" component={MyProfile} />
           <ProtectedRoute path="/users/:id" component={UserProfile} />
           <Route path="/not-found" component={NotFound} />

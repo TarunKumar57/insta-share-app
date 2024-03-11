@@ -32,7 +32,6 @@ class SearchResults extends Component {
   getSearchPosts = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {searchInput} = this.props
-    console.log(searchInput)
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = `https://apis.ccbp.in/insta-share/posts?search=${searchInput}`
     const options = {
