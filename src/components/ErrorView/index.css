@@ -1,0 +1,64 @@
+.error-container {
+  font-family: Roboto;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  text-align: center;
+}
+.error-img {
+  /* height: 30vh; */
+  width: 48px;
+  height: 48px;
+  top: 599px;
+  left: 697px;
+  padding: 4px, 2px, 6px, 2px;
+}
+.error-paragraph {
+  color: #262626;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.try-again-button {
+  background-color: #4f46e5;
+  border: 1px solid #4f46e5;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 102px;
+  height: 32px;
+  top: 703px;
+  left: 669.5px;
+}
+
+@media (max-width: 600px) {
+  .error-img {
+    /* height: 15vh; */
+    width: 24px;
+    height: 24px;
+    top: 342px;
+    left: 168px;
+    padding: 2px, 1px, 3px, 1px;
+  }
+  .error-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 5%;
+  }
+  .try-again-button {
+    width: 102px;
+    height: 32px;
+    top: 408px;
+    left: 129px;
+  }
+}
