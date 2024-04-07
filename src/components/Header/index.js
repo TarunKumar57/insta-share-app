@@ -18,6 +18,13 @@ class Header extends Component {
     onSearchPosts()
   }
 
+  onEnterSearchInput = event => {
+    const {onSearchPosts} = this.props
+    if (event.key === 'Enter') {
+      onSearchPosts()
+    }
+  }
+
   render() {
     return (
       <InstaContext.Consumer>
@@ -78,6 +85,7 @@ class Header extends Component {
                 className="search-input"
                 value={searchInput}
                 onChange={onChangeSearchInput}
+                onKeyDown={this.onEnterSearchInput}
               />
               <button
                 type="button"
@@ -112,6 +120,7 @@ class Header extends Component {
                       className="search-input"
                       value={searchInput}
                       onChange={onChangeSearchInput}
+                      onKeyDown={this.onEnterSearchInput}
                     />
                     <button
                       type="button"
